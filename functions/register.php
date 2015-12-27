@@ -28,8 +28,8 @@ include ("database.php");
             echo "<script>alert('Password needed')</script>";
             exit();
         }
-        $data = "INSERT INTO users (firstname, lastname, email, country, dofBirth, password, role) VALUES ('$f_name', '$l_name', '$email', '$country', '$role', '$passw', '$dofb')";
-        $insert_data = mysqli_query($conn, $data);
+        $insert_data = mysqli_query($conn, "insert into users (firstname, lastname, email, country, dofBirth, password, role) 
+        VALUES ('$f_name', '$l_name', '$email', '$country', '$role', '$passw', '$dofb')");
         if ($insert_data) {
             //header( "refresh:2;url=../index.php" );
             echo "<script>alert('Your registration was successful')</script>";
