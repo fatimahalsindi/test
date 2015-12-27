@@ -2,14 +2,16 @@
 include ("login.php");
 include ("database.php");
 if (isset($_POST['edit'])){
-    echo "step one";
     $title = $_POST['title'];
     $ad_country = $_POST['ad_country'];
     $ad_date = $_POST['ad_date'];
     $story = $_POST['story'];
-    $user_name = $_SESSION['name'];
-    echo $user_name . "<br />";
-    echo $title . "<br />";
+    $user_email = $_SESSION['email'];
+    
+    $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
+    if ($id){
+        echo "step two";
+    }
 }
 /*if (isset($_POST['edit'])) {
     echo "step one";
