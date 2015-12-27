@@ -12,8 +12,7 @@ include_once ("database.php");
         $get_email = mysqli_query($conn,"select email from users where email = '$email'");
         $check_mail = mysqli_num_rows($get_email);
         if ($check_mail==1) {
-            $html = "<script>alert('This email already exists')</script>";
-            echo $html;
+            echo "<script>alert('This email already exists')</script>";
             exit();
         }
         if (isset($_POST['passw'])){
@@ -29,16 +28,11 @@ include_once ("database.php");
             echo "<script>alert('Password needed')</script>";
             exit();
         }
-        /*if ($role=='Author'){
-            $admin_data = "INSERT INTO Admins (username, password) VALUES ('$email', $passw)";
-            $insert_admin_data = mysqli_query($conn, $admin_data);
-        }*/
         $data = "INSERT INTO users (firstname, lastname, email, country, dofBirth, password, role) VALUES ('$f_name', '$l_name', '$email', '$country', '$role', '$passw', '$dofb')";
         $insert_data = mysqli_query($conn, $data);
         if ($insert_data) {
             header( "refresh:2;url=../index.php" );
             echo "<script>alert('Your registration was successful')</script>";
-            flush();
             exit();
         }
     }
