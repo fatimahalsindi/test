@@ -54,7 +54,7 @@ function register() {
 
 function get_adventure() {
     global $conn;
-    $adventure = "SELECT * FROM Adventures ORDER BY date LIMIT 5 ";
+    $adventure = "SELECT * FROM adventures ORDER BY date LIMIT 5 ";
     $get_adventure = mysqli_query($conn, $adventure);
     while($row = mysqli_fetch_array($get_adventure)){
         $adv_title= $row['adventureTitle'];
@@ -67,13 +67,13 @@ function comment(){
     global $conn;
     $html ="";
     $adv_id = $_GET['adventure'];
-    $s_comment = "SELECT * FROM Comments WHERE adventureID='$adv_id'";
+    $s_comment = "SELECT * FROM comments WHERE adventureID='$adv_id'";
     $r_comment = mysqli_query($conn, $s_comment);
     while ($row = mysqli_fetch_array($r_comment)){
         $name = $row ['userID'];
         $story = $row['comment'];
         $date = $row['date'];
-        $d_name = "SELECT firstname FROM USERS WHERE userID = '$name'";
+        $d_name = "SELECT firstname FROM users WHERE userID = '$name'";
         $r_name = mysqli_query($conn, $d_name);
         $p_name = mysqli_fetch_assoc($r_name);
         $real_name =$p_name['firstname'];
@@ -89,7 +89,7 @@ EOT;
 
 function get_all_adventures() {
     global $conn;
-    $adventure = "SELECT * FROM Adventures ORDER BY date";
+    $adventure = "SELECT * FROM adventures ORDER BY date";
     $get_adventure = mysqli_query($conn, $adventure);
     while($row = mysqli_fetch_array($get_adventure)){
         $adv_title= $row['adventureTitle'];
@@ -103,7 +103,7 @@ function search(){
     $html = ' ';
     if (isset($_GET['search'])){
         $result = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
-        $d_result = "SELECT * FROM USERS WHERE firstname LIKE '%$result%' OR email LIKE '%$result%'";
+        $d_result = "SELECT * FROM users WHERE firstname LIKE '%$result%' OR vote LIKE '%$result%'";
         $r_result = mysqli_query($conn, $d_result);
         $search_count = mysqli_num_rows($r_result);
         if (!$search_count==0){
@@ -125,14 +125,14 @@ function search(){
 function get_authors (){
     global $conn;
 
-    $author = "SELECT * FROM USERS WHERE role = 'author' ORDER BY firstname";
+    $author = "SELECT * FROM users WHERE role = 'author' ORDER BY firstname";
     $d_author = mysqli_query($conn, $author);
     while($row = mysqli_fetch_array($d_author)){
         $author_name= $row['firstname'];
         $author_l_name = $row['lastname'];
         $full_name = $author_name . ' ' . $author_l_name;
         $author_id = $row['userID'];
-        $author_story = "SELECT * FROM Adventures WHERE userID='$author_id'";
+        $author_story = "SELECT * FROM adventures WHERE userID='$author_id'";
         $run_author_story = mysqli_query($conn, $author_story);
         $data_author = mysqli_fetch_assoc($run_author_story);
         $story_title = $data_author['adventureTitle'];
@@ -145,7 +145,7 @@ function user_info (){
         global $conn;
         $html = '';
         $author_id = $_GET['id'];
-        $author = "SELECT * FROM USERS WHERE userID = '$author_id'";
+        $author = "SELECT * FROM users WHERE userID = '$author_id'";
         $d_author = mysqli_query($conn, $author);
         while($row = mysqli_fetch_array($d_author)){
             $author_name= ucfirst($row['firstname']);
@@ -154,7 +154,7 @@ function user_info (){
             $author_email= $row['email'];
             $author_country=$row['country'];
             $author_doB = $row['dofBirth'];
-            $author_story = "SELECT * FROM Adventures WHERE userID='$author_id'";
+            $author_story = "SELECT * FROM adventures WHERE userID='$author_id'";
             $run_author_story = mysqli_query($conn, $author_story);
             $amount = mysqli_num_rows($run_author_story);
             while ($data_author = mysqli_fetch_assoc($run_author_story)){
@@ -177,7 +177,7 @@ EOT;
 function get_user_info (){
     $html ='';
     global $conn;
-    $author = "SELECT * FROM USERS";
+    $author = "SELECT * FROM users";
     $d_author = mysqli_query($conn, $author);
     while($row = mysqli_fetch_array($d_author)){
         $author_name= ucfirst($row['firstname']);
@@ -205,7 +205,7 @@ function getUserInfo (){
         global $conn;
         $html = '';
         $author_id = $_GET['id'];
-        $author = "SELECT * FROM USERS WHERE userID = '$author_id'";
+        $author = "SELECT * FROM users WHERE userID = '$author_id'";
         $d_author = mysqli_query($conn, $author);
         while($row = mysqli_fetch_array($d_author)){
             $author_name= ucfirst($row['firstname']);
@@ -215,7 +215,7 @@ function getUserInfo (){
             $author_country=$row['country'];
             $author_doB = $row['dofBirth'];
             $role = $row['role'];
-            $author_story = "SELECT * FROM Adventures WHERE userID='$author_id'";
+            $author_story = "SELECT * FROM adventures WHERE userID='$author_id'";
             $run_author_story = mysqli_query($conn, $author_story);
             $amount = mysqli_num_rows($run_author_story);
             $html .=<<<EOT
@@ -247,14 +247,14 @@ $id_sent = preg_replace("/[^0-9]/","",$_REQUEST['id']);
 $vote_sent = preg_replace("/[^0-9]/","",$_REQUEST['stars']);
 $u_name = preg_replace("/[^0-9]/","",$_REQUEST['name']);
 $ad_id = $_REQUEST['ad'];
-$row = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM USERS WHERE  firstname='$u_name'"));
+$row = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM users WHERE  firstname='$u_name'"));
 $uid = $row['userID'];
-$q=mysql_num_rows(mysqli_query("select voteID from Votes where adventureID=$ad_id"));
+$q=mysql_num_rows(mysqli_query("select voteID from votes where adventureID=$ad_id"));
 if(!$q) {
-    mysqli_query("INSERT INTO Votes (adventureID,userID) values ('$ad_id',$uid)");
+    mysqli_query("INSERT INTO votes (adventureID,userID) values ('$ad_id',$uid)");
 }
 
-$query = mysqli_query("SELECT total_votes, total_value, userID FROM Votes WHERE adventureID='$ad_id' ");
+$query = mysqli_query("SELECT total_votes, total_value, userID FROM votes WHERE adventureID='$ad_id' ");
 $numbers = mysqli_fetch_assoc($query);
 $checkuser = unserialize($numbers['userID']);
 $count = $numbers['total_votes']; //how many votes total
@@ -267,7 +267,7 @@ $tense = ($count==1) ? "vote" : "votes"; //plural form votes/vote
 ((is_array($checkuser)) ? array_push($checkuser,$uid) : $checkuser=array($uid));
 $insertip=serialize($checkuser);
 
- $test = mysqli_query ($conn, "SELECT userID FROM Votes WHERE userID='$uid'");
+ $test = mysqli_query ($conn, "SELECT userID FROM votes WHERE userID='$uid'");
 if($test){
     $voted=mysql_num_rows ($test);
 
@@ -277,7 +277,7 @@ else {
 }
     if (($vote_sent >= 1)){
         if(!$voted) {
-            $update = "UPDATE Votes SET total_votes='$added', total_value='$sum', userID='$insertip' WHERE adventureID='$ad_id'";
+            $update = "UPDATE votes SET total_votes='$added', total_value='$sum', userID='$insertip' WHERE adventureID='$ad_id'";
             $result = mysqli_query($update);
         }
         if($result)	setcookie("rating_".$id_sent,1, time()+ 2592000);
@@ -285,7 +285,7 @@ else {
     }
 
 
-    $newtotals = mysqli_query("SELECT total_votes, total_value, userID FROM Votes WHERE id='$id_sent' ");
+    $newtotals = mysqli_query("SELECT total_votes, total_value, userID FROM votes WHERE id='$id_sent' ");
 $numbers = mysqli_fetch_assoc($newtotals);
 $count = $numbers['total_votes'];
 $current_rating = $numbers['total_value'];
