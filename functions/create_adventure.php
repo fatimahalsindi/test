@@ -3,6 +3,13 @@ include ("login.php");
 include ("database.php");
 if (isset($_POST['edit'])){
     echo "step one";
+    $title = $_POST['title'];
+    $ad_country = $_POST['ad_country'];
+    $ad_date = $_POST['ad_date'];
+    $story = $_POST['story'];
+    $user_email = $_SESSION['username'];
+    echo $user_email . "<br />";
+    echo $title . "<br />";
 }
 /*if (isset($_POST['edit'])) {
     echo "step one";
