@@ -25,7 +25,7 @@ include ("functions/function.php");
      <div id="right_nav">
         <div id="search">
             <form method="post">
-                <input type="search" name="wondasearch">
+                <input type="search" name="term">
                 <button type="submit" name="search">search</button>
             </form>
             <?php search(); ?>
