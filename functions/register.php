@@ -36,8 +36,8 @@ include ("database.php");
                                     echo $passw ."<br/>";
                                     $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
                                     values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
-                                    $insert_data = mysqli_query($conn, $sql);
-                                    if ($insert_data){
+                                    $insert_sql = mysqli_query($conn, $sql);
+                                    if ($insert_sql){
                                         echo "step two";
                                     }
         /*if ($insert_data) {
