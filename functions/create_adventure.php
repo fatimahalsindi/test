@@ -35,8 +35,8 @@ if (isset($_POST['edit'])){
             }
             
         }
-        $data = "INSERT INTO adventures(adventureTitle, adventureCountry, date, story, adventureAuthor, userID, adventurePhotoName)
-        VALUES ('$title', '$ad_country', '$ad_date', '$story', '$authorname', '$user_id', '$desired_dir' )";
+        $data = "INSERT INTO adventures( story, adventureTitle, adventureCountry, adventureAuthor, date, adventurePhotoName, userID)
+        VALUES ('$story', '$title', '$ad_country', '$authorname', '$ad_date', '$desired_dir', '$user_id')";
        echo "<pre>Debug: $query</pre>\m";
         $run_data = mysqli_query($conn, $data);
         if ( false===$run_data ) {
