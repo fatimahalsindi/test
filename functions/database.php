@@ -20,7 +20,7 @@ $tray = $make_sql["adventureID"] . $make_sql["adventureTitle"];
 
 */
 
-$sql = "ALTER TABLE comments ADD FOREIGN KEY (userID) REFERENCES USERS (userID)";
+$sql = "ALTER TABLE comments ADD FOREIGN KEY (adventureID) REFERENCES adventure (adventureID)";
 $run_sql = mysqli_query($conn, $sql);
 
 if ($run_sql) {
