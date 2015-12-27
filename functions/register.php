@@ -36,8 +36,9 @@ include ("database.php");
                                     echo $passw ."<br/>";
                                     $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
                                     values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
-                                    if ($sql){
-                                        echo "step one";
+                                    $insert_data = mysqli_query($conn, $sql);
+                                    if ($insert_data){
+                                        echo "step two";
                                     }
         /*if ($insert_data) {
             //header( "refresh:2;url=../index.php" );
