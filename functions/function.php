@@ -13,7 +13,7 @@ function register() {
         $dofb = $_POST['bday'];
         $role = $_POST['role'];
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $get_email = mysqli_query($conn,"select email from USERS where email = '$email'");
+        $get_email = mysqli_query($conn,"select email from users where email = '$email'");
         $check_mail = mysqli_num_rows($get_email);
 
         if ($check_mail==1) {
@@ -38,7 +38,7 @@ function register() {
             $insert_admin_data = mysqli_query($conn, $admin_data);
         }*/
 
-        $data = "INSERT INTO USERS (firstname, lastname, email, country, dofBirth, password, role) VALUES ('$f_name', '$l_name', '$email', '$country', '$role', ('$passw'), '$dofb')";
+        $data = "INSERT INTO users (firstname, lastname, email, country, dofBirth, password, role) VALUES ('$f_name', '$l_name', '$email', '$country', '$role', ('$passw'), '$dofb')";
         $insert_data = mysqli_query($conn, $data);
 
         if ($insert_data) {
