@@ -47,7 +47,7 @@ include ("functions/function.php");
                         
                                     <tr>
                                                     <td>
-                                                        <input type="date" name="bday" placeholder="Date of Birth dd/mm/year"/>
+                                                        <input type="date" name="bday" placeholder="year-mm-dd"/>
                                                     </td>
                                     </tr>
                                     <tr>
