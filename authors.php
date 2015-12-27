@@ -13,15 +13,22 @@ include ("functions/function.php");
 </div>
 <div id="content_region">
     <div id="main_content">
-    <p><h2>All Authors on this Blog</h2></p>
-        <p><?php get_authors(); ?></p>
+            <p><h2>All Authors on this Blog</h2></p>
+            <p><?php get_authors(); ?></p>
         
             <div id="register">
                 <h5><a href="registerform.php"> Click here to register</a></h5>
             </div>
                 <p><?php echo search(); ?></p>
-
 </div>
+<div id="right_nav">
+        <div id="search">
+            <form method="get" action="result.php">
+                <input type="search" name="term">
+                <button type="submit" name="search">search</button>
+            </form>
+        </div>
+    </div>
     </div>
 
 <?php include ("templates/footer.php"); ?>
