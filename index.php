@@ -21,6 +21,14 @@ include ("functions/function.php");
             <ul class="adventures"><?php get_adventure(); ?>
             </ul>
     </div>
+    <div id="right_nav">
+        <div id="search">
+            <form method="get" action="result.php">
+                <input type="search" name="term">
+                <button type="submit" name="search">search</button>
+            </form>
+        </div>
+    </div>
 </div>
 
 <?php include ("templates/footer.php"); ?>
