@@ -16,8 +16,6 @@ include ("functions/function.php");
         <h2>Top 5 Adventures</h2>
         <ul class="adventures"><?php get_adventure(); ?>
         </ul>
-    </div>
-    <div id="left_sidebar">
         <div id="register">
         <form action=" " method="post" >
         <table class="register_form">
