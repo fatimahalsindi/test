@@ -8,7 +8,6 @@ include_once ("database.php");
         
        
         echo $f_name;
-         /*
         $l_name = mysqli_real_escape_string($conn, $_POST['lname']);
         $country = mysqli_real_escape_string($conn, $_POST['country']);
         $passw = MD5($_POST['passw']);
