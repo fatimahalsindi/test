@@ -1,6 +1,6 @@
 <?php
 include ("login.php");
-include ("database.php");
+include_once ("database.php");
     global $conn;
     if (isset($_POST['register'])) {
         $f_name = mysqli_real_escape_string($conn, $_POST['fname']);
@@ -40,3 +40,7 @@ include ("database.php");
             exit();
         }
     }
+    else 
+{
+    echo "Cannot register";
+}
