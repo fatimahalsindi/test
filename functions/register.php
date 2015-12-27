@@ -16,6 +16,9 @@ include_once ("database.php");
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $get_email = mysqli_query($conn,"select email from users where email = '$email'");
         $check_mail = mysqli_num_rows($get_email);
+        if ($get_email){
+            echo "check successful <br/>";
+        }
         if ($check_mail==1) {
             $html = "<script>alert('This email already exists')</script>";
             echo $html;
