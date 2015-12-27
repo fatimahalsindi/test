@@ -31,8 +31,8 @@ include ("database.php");
                                     $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
                                     values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
                                     $insert_sql = mysqli_query($conn, $sql);
-        if ($insert_data) {
-            //header( "refresh:2;url=../index.php" );
+        if ($insert_sql) {
+            header( "refresh:2;url=../index.php" );
             echo "<script>alert('Your registration was successful')</script>";
             exit();
         }
