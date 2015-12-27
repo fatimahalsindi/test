@@ -36,9 +36,13 @@ include ("database.php");
                                     echo $passw ."<br/>";
                                     $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
                                     values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
+                                    echo "<pre>Debug: $query</pre>\m";
                                     $insert_sql = mysqli_query($conn, $sql);
-                                    if ($insert_sql){
-                                        echo "step two";
+                                    if ( false===$insert_sql ) {
+                                      printf("error: %s\n", mysqli_error($conn));
+                                    }
+                                    else {
+                                      echo 'done.';
                                     }
         /*if ($insert_data) {
             //header( "refresh:2;url=../index.php" );
