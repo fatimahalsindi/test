@@ -1,9 +1,10 @@
 <?php
 include ("login.php");
 include ("database.php");
-
-
-if (isset($_POST['edit'])) {
+if (isset($_POST['edit'])){
+    echo "step one";
+}
+/*if (isset($_POST['edit'])) {
     echo "step one";
     $title = $_POST['title'];
     $ad_country = $_POST['ad_country'];
@@ -58,5 +59,5 @@ if (isset($_POST['edit'])) {
     
         }
     }
-}
+}*/
 
