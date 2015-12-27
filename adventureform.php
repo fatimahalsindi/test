@@ -29,7 +29,7 @@ include("templates/header.php");
         </tr>
         <tr>
             <td>
-                <legend>Date</legend><input type="date" name="ad_date">
+                <legend>Date</legend><input type="date" name="ad_date" placeholder ="year-mm-dd" />
             </td>
         </tr>
         <tr>
@@ -37,8 +37,7 @@ include("templates/header.php");
                 <legend>Adventure</legend><textarea cols="70" rows="20" name="story" placeholder="tell about an adventure"></textarea>
             </td>
         </tr>
-        <tr>
-            <td>Select Photo (one or multiple):</td>
+        <tr>Select Photo (one or multiple):
             <td><input type="file" name="files[]" id="files" multiple="multiple"/></td>
         </tr>
         <tr>
