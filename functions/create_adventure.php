@@ -13,12 +13,13 @@ if (isset($_POST['edit'])){
     if ($id){
         echo "step two <br />";
     }
-    $u_id = mysqli_fetch_assoc($id);
+    while ($u_id = mysqli_fetch_assoc($id)) {
         $user_id = $u_id['userID'];
         $f_name = $u_id['firstname'];
         $l_name = $u_id['lastname'];
         $authorname = $f_name ' ' . $l_name;
         echo $authorname;
+    }
 }
 /*if (isset($_POST['edit'])) {
     echo "step one";
