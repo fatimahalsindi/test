@@ -1,5 +1,4 @@
 <?php
-include ("functions/login.php");
 include("templates/header.php");
 ?>
         <h3>Welcome <?php echo $_SESSION['name']; ?></h3>
@@ -42,7 +41,7 @@ include("templates/header.php");
         </tr>
         <tr>
             <td>
-                <button type="submit" name="edit">Edit</button>
+                <input type="submit" name="edit" placeholder="Create" />
             </td>
         </tr>
     </table>
