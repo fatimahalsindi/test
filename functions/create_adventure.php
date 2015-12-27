@@ -11,8 +11,14 @@ if (isset($_POST['edit'])){
     
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
     if ($id){
-        echo "step two";
+        echo "step two <br />";
     }
+    $u_id = mysqli_fetch_assoc($id)
+        $user_id = $u_id['userID'];
+        $f_name = $u_id['firstname'];
+        $l_name = $u_id['lastname'];
+        $authorname = $f_name ' ' . $l_name;
+        echo $authorname;
 }
 /*if (isset($_POST['edit'])) {
     echo "step one";
