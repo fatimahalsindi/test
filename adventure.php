@@ -45,7 +45,7 @@ include ("functions/function.php");
             global $conn;
             if(isset($_GET['adventure'])){
                 $id = $_GET['adventure'];
-                $f= "SELECT * FROM Adventures WHERE adventureID = '$id'";
+                $f= "SELECT * FROM adventures WHERE adventureID = '$id'";
                 $run_f = mysqli_query($conn, $f);
 
                 while ($row = mysqli_fetch_array($run_f)){
