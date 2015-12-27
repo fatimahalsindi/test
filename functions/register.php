@@ -33,7 +33,7 @@ include ("database.php");
                         echo $email ."<br/>";
                                 echo $country ."<br/>";
                                     echo $role ."<br/>";
-                                    echo $passw ."<br/>"
+                                    echo $passw ."<br/>";
                                     $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
                                     values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
                                     if ($sql){
