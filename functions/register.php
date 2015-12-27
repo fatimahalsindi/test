@@ -3,11 +3,7 @@ include ("login.php");
 include_once ("database.php");
     global $conn;
     if (isset($_POST['register'])) {
-        echo "cheers";
         $f_name = mysqli_real_escape_string($conn, $_POST['fname']);
-        
-       
-        echo $f_name;
         $l_name = mysqli_real_escape_string($conn, $_POST['lname']);
         $country = mysqli_real_escape_string($conn, $_POST['country']);
         $dofb = $_POST['bday'];
@@ -38,7 +34,7 @@ include_once ("database.php");
             $admin_data = "INSERT INTO Admins (username, password) VALUES ('$email', $passw)";
             $insert_admin_data = mysqli_query($conn, $admin_data);
         }*/
-        $data = "INSERT INTO users (firstname, lastname, email, country, dofBirth, password, role) VALUES ('$f_name', '$l_name', '$email', '$country', '$role', ('$passw'), '$dofb')";
+        $data = "INSERT INTO users (firstname, lastname, email, country, dofBirth, password, role) VALUES ('$f_name', '$l_name', '$email', '$country', '$role', '$passw', '$dofb')";
         $insert_data = mysqli_query($conn, $data);
         if ($insert_data) {
             header( "refresh:2;url=../index.php" );
