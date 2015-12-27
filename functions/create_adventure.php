@@ -10,12 +10,15 @@ if (isset($_POST['edit'])){
     $user_email = $_SESSION['email'];
     
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
-    $run_id = mysqli_fetch_array($id);
-    $user_id = $run_id['userID'];
+    while ($run_id = mysqli_fetch_array($id){
+        $user_id = $run_id['userID'];
         $f_name = $run_id['firstname'];
         $l_name = $run_id['lastname'];
         $authorname = $f_name . ' ' . $l_name;
         echo $authorname;
+        echo "step 4";
+    }
+    
 /*if (isset($_POST['edit'])) {
     echo "step one";
     $title = $_POST['title'];
