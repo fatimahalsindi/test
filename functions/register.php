@@ -12,11 +12,13 @@ include ("database.php");
         $get_email = mysqli_query($conn,"select email from users where email = '$email'");
         $check_mail = mysqli_num_rows($get_email);
         if ($check_mail==1) {
+            header( "refresh:2;url=../registerform.php" );
             echo "<script>alert('This email already exists')</script>";
             exit();
         }
         if (isset($_POST['passw'])){
             if (strlen($_POST['passw'])<=6) {
+            header( "refresh:2;url=../registerform.php" );
                 echo "<script>alert('Password too short')</script>";
                 exit();
             }
