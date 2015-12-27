@@ -1,4 +1,5 @@
 <?php
+include ("functions/login.php");
 include("templates/header.php");
 ?>
         <h3>Welcome <?php echo $_SESSION['name']; ?></h3>
