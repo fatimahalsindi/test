@@ -10,7 +10,6 @@ include_once ("database.php");
         echo $f_name;
         $l_name = mysqli_real_escape_string($conn, $_POST['lname']);
         $country = mysqli_real_escape_string($conn, $_POST['country']);
-        $passw = MD5($_POST['passw']);
         $dofb = $_POST['bday'];
         $role = $_POST['role'];
         $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -24,10 +23,15 @@ include_once ("database.php");
             echo $html;
             exit();
         }
-        if (isset($passw)){
+        if (isset($_POST['$passw'])){
             if (strlen($passw)<=6) {
                 echo "<script>alert('Password too short')</script>";
                 exit();
+            }
+            else {
+                
+        $passw = MD5($_POST['passw']);
+        echo "$passw";
             }
         }
         else {
