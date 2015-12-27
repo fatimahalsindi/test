@@ -11,17 +11,11 @@ if (isset($_POST['edit'])){
     
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
     $run_id = mysqli_fetch_array($id);
-if ( false===$run_id ) {
-  printf("error: %s\n", mysqli_error($con));
-}
-else {
-  echo 'done.';
-}
-    
-    if ($run_id){
-        echo "step three <br />";
-    }
-}
+    $user_id = $run_id['userID'];
+        $f_name = $run_id['firstname'];
+        $l_name = $run_id['lastname'];
+        $authorname = $f_name ' ' . $l_name;
+        echo $authorname;
 /*if (isset($_POST['edit'])) {
     echo "step one";
     $title = $_POST['title'];
