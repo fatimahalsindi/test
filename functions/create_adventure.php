@@ -14,7 +14,7 @@ if (isset($_POST['edit'])){
     $user_id = $run_id['userID'];
         $f_name = $run_id['firstname'];
         $l_name = $run_id['lastname'];
-        $authorname = $f_name ' ' . $l_name;
+        $authorname = $f_name . ' ' . $l_name;
         echo $authorname;
 /*if (isset($_POST['edit'])) {
     echo "step one";
