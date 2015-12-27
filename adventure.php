@@ -25,10 +25,7 @@ include ("functions/function.php");
                 echo '
         <div id="logout">
            <a href="functions/logout.php" ><button type="submit">Logout</button></a>
-        </div>'; }
-            else{
-                header("location: url=index.php");
-            }?>
+        </div>'; }?>
 
         </div>
     </div>
