@@ -68,7 +68,7 @@ $i = 0;
 // The $cfg['Servers'] array starts with $cfg['Servers'][1].  Do not use $cfg['Servers'][0].
 // You can disable a server config entry by setting host to ''.
 $i++;
-$cfg['Servers'][$i]['host']          = 'localhost'; // MySQL hostname or IP address
+$cfg['Servers'][$i]['host']          = 'br-cdbr-azure-south-a.cloudapp.net'; // MySQL hostname or IP address
 $cfg['Servers'][$i]['port']          = '3306';          // MySQL port - leave blank for default port
 $cfg['Servers'][$i]['socket']        = '';          // Path to the socket - leave blank for default socket
 $cfg['Servers'][$i]['connect_type']  = 'tcp';       // How to connect to MySQL server ('tcp' or 'socket')
@@ -83,8 +83,8 @@ $cfg['Servers'][$i]['controlpass']   = '';          // access to the "mysql/user
                                                     // used for all relational
                                                     // features (pmadb)
 $cfg['Servers'][$i]['auth_type']     = 'config';    // Authentication method (config, http or cookie based)?
-$cfg['Servers'][$i]['user']          = 'root';      // MySQL user
-$cfg['Servers'][$i]['password']      = 'root';          // MySQL password (only needed
+$cfg['Servers'][$i]['user']          = 'be0f0168c063e1';      // MySQL user
+$cfg['Servers'][$i]['password']      = '03b24012';          // MySQL password (only needed
                                                     // with 'config' auth_type)
 $cfg['Servers'][$i]['only_db']       = '';          // If set to a db-name, only
                                                     // this db is displayed in left frame
