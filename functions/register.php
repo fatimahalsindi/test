@@ -1,6 +1,6 @@
 <?php
 include ("login.php");
-include_once ("database.php");
+include ("database.php");
     global $conn;
     if (isset($_POST['register'])) {
         $f_name = mysqli_real_escape_string($conn, $_POST['fname']);
@@ -31,7 +31,7 @@ include_once ("database.php");
         $data = "INSERT INTO users (firstname, lastname, email, country, dofBirth, password, role) VALUES ('$f_name', '$l_name', '$email', '$country', '$role', '$passw', '$dofb')";
         $insert_data = mysqli_query($conn, $data);
         if ($insert_data) {
-            header( "refresh:2;url=../index.php" );
+            //header( "refresh:2;url=../index.php" );
             echo "<script>alert('Your registration was successful')</script>";
             exit();
         }
