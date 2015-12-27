@@ -12,19 +12,17 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-else {
-    echo "successful";
-}
+
 
 /*
 echo $adventureID;
 $tray = $make_sql["adventureID"] . $make_sql["adventureTitle"];
 
-
+*/
 
 $sql = "ALTER TABLE Messages ADD FOREIGN KEY (recipient) REFERENCES USERS (userID)";
 $run_sql = mysqli_query($conn, $sql);
 
 if ($run_sql) {
-    echo "foreign key successfully added 2";
-};*/
+    echo "foreign key successfully added 1";
+};
