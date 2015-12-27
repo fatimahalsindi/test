@@ -18,6 +18,7 @@ if (isset($_POST['edit'])){
         echo $authorname;
         echo "step 4";
     }
+}
     
 /*if (isset($_POST['edit'])) {
     echo "step one";
