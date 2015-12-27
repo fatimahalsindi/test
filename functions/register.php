@@ -3,6 +3,8 @@ include ("login.php");
 include_once ("database.php");
     global $conn;
     if (isset($_POST['register'])) {
+        echo "Cheers";
+        /*
         $f_name = mysqli_real_escape_string($conn, $_POST['fname']);
         $l_name = mysqli_real_escape_string($conn, $_POST['lname']);
         $country = mysqli_real_escape_string($conn, $_POST['country']);
