@@ -23,7 +23,6 @@ include_once ("database.php");
             }
             else {
                 $passw = MD5($_POST['passw']);
-                echo "$passw";
             }
         }
         else {
