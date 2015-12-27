@@ -11,6 +11,12 @@ if (isset($_POST['edit'])){
     
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
     $run_id = mysql1_fetch_array($id);
+if ( false===$run_id ) {
+  printf("error: %s\n", mysqli_error($con));
+}
+else {
+  echo 'done.';
+}
     
     if ($run_id){
         echo "step three <br />";
