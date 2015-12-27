@@ -10,14 +10,14 @@ if (isset($_POST['edit'])) {
     $story = $_POST['story'];
     $user_email = $_SESSION['username'];
 
-    $id = mysqli_query($conn, "SELECT * from USERS WHERE email='$user_email'");
+    $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
     $u_id = mysqli_fetch_assoc($id);
     $user_id = $u_id['userID'];
     $f_name = $u_id['firstname'];
     $l_name = $u_id['lastname'];
     $authorname = $f_name." ".$l_name;
     if (isset($_FILES['files'])) {
-        $sql = "SELECT adventureID FROM Adventures WHERE adventureTitle ='$title'";
+        $sql = "SELECT adventureID FROM adventures WHERE adventureTitle ='$title'";
         $run_sql = mysqli_query($conn, $sql);
         $make_sql = mysqli_fetch_assoc($run_sql);
         $adventureID = $make_sql['adventureID'];
