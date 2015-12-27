@@ -7,7 +7,7 @@ if (isset($_POST['edit'])){
     $ad_country = $_POST['ad_country'];
     $ad_date = $_POST['ad_date'];
     $story = $_POST['story'];
-    $user_email = $_SESSION['username'];
+    $user_email = $_SESSION['name'];
     echo $user_email . "<br />";
     echo $title . "<br />";
 }
