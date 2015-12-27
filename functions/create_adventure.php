@@ -36,6 +36,8 @@ if (isset($_POST['edit'])){
                 }
     }
 }
+}
+}
     
 /*if (isset($_POST['edit'])) {
     echo "step one";
