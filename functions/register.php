@@ -28,6 +28,15 @@ include ("database.php");
             echo "<script>alert('Password needed')</script>";
             exit();
         }
+        echo $f_name ."<br/>";
+                echo $l_name ."<br/>";
+                        echo $email ."<br/>";
+                                echo $country ."<br/>";
+                                    echo $role ."<br/>";
+
+
+
+
         $insert_data = mysqli_query($conn, "insert into users (firstname, lastname, email, country, dofBirth, password, role) 
         VALUES ('$f_name', '$l_name', '$email', '$country', '$role', '$passw', '$dofb')");
         if ($insert_data) {
