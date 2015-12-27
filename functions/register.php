@@ -35,7 +35,7 @@ include ("database.php");
                                     echo $role ."<br/>";
                                     echo $passw ."<br/>";
                                     $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
-                                    values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
+                                    values ('$f_name', '$l_name', '$email', '$country', 'STR_TO_DATE('$dofb','%m-%d-%y')', '$passw', '$role')";
                                     echo "<pre>Debug: $query</pre>\m";
                                     $insert_sql = mysqli_query($conn, $sql);
                                     if ( false===$insert_sql ) {
