@@ -18,11 +18,11 @@ if (!$conn) {
 echo $adventureID;
 $tray = $make_sql["adventureID"] . $make_sql["adventureTitle"];
 
-*/
+
 
 $sql = "ALTER TABLE adventures ADD FOREIGN KEY (userID) REFERENCES users (userID)";
 $run_sql = mysqli_query($conn, $sql);
 
 if ($run_sql) {
     echo "foreign key successfully added 5";
-};
+};*/
