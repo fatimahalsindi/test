@@ -10,7 +10,7 @@ if (isset($_POST['edit'])){
     $user_email = $_SESSION['email'];
     
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
-    $run_id = mysql1_fetch_array($id);
+    $run_id = mysqli_fetch_array($id);
 if ( false===$run_id ) {
   printf("error: %s\n", mysqli_error($con));
 }
