@@ -28,29 +28,15 @@ include ("database.php");
             echo "<script>alert('Password needed')</script>";
             exit();
         }
-        echo $f_name ."<br/>";
-                echo $l_name ."<br/>";
-                        echo $email ."<br/>";
-                                echo $country ."<br/>";
-                                    echo $role ."<br/>";
-                                    echo $passw ."<br/>";
                                     $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
                                     values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
-                                    echo "<pre>Debug: $query</pre>\m";
                                     $insert_sql = mysqli_query($conn, $sql);
-                                    if ( false===$insert_sql ) {
-                                      printf("error: %s\n", mysqli_error($conn));
-                                    }
-                                    else {
-                                      echo 'done.';
-                                    }
-        /*if ($insert_data) {
+        if ($insert_data) {
             //header( "refresh:2;url=../index.php" );
             echo "<script>alert('Your registration was successful')</script>";
             exit();
-        }*/
+        }
     }
-    else 
-{
+    else {
     echo "Cannot register";
 }
