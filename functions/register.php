@@ -20,8 +20,8 @@ include_once ("database.php");
             echo $html;
             exit();
         }
-        if (isset($_POST['$passw'])){
-            if (strlen($_POST['$passw'])<=6) {
+        if (isset($_POST['passw'])){
+            if (strlen($_POST['passw'])<=6) {
                 echo "<script>alert('Password too short')</script>";
                 exit();
             }
