@@ -21,27 +21,27 @@ include ("functions/function.php");
                         <table class="register_form">
                                     <tr>
                                                 <td>
-                                                            <input type="text" name="fname" placeholder="First Name" />
+                                                            <input type="text" name="fname" placeholder="First Name" required="required"/>
                                                 </td>
                                     </tr>
                                     <tr>
                                                  <td>
-                                                            <input type="text" name="lname" placeholder="Last Name" />
+                                                            <input type="text" name="lname" placeholder="Last Name" required="required"/>
                                                 </td>
                                     </tr>
                                     <tr>
                                                 <td>
-                                                        <input type="text" name="country" placeholder="Country" />
+                                                        <input type="text" name="country" placeholder="Country" required="required"/>
                                                     </td>
                                     </tr>
                                     <tr>
                                                     <td>
-                                                        <input type="text" name="email" placeholder="Email Address" />
+                                                        <input type="text" name="email" placeholder="Email Address" required="required"/>
                                                     </td>
                                     </tr>
                                     <tr>
                                                     <td>
-                                                        <input type="password" name="passw" placeholder="********************" />
+                                                        <input type="password" name="passw" placeholder="********************" required="required"/>
                                                     </td>
                                     </tr>
                         
