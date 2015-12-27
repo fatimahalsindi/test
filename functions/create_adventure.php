@@ -10,7 +10,7 @@ if (isset($_POST['edit'])){
     $user_email = $_SESSION['email'];
     echo $user_email;
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
-    while ($run_id = mysqli_fetch_array($id){
+    while ($run_id = mysqli_fetch_assoc($id)){
         $user_id = $run_id['userID'];
         $f_name = $run_id['firstname'];
         $l_name = $run_id['lastname'];
