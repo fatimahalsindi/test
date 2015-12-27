@@ -8,7 +8,6 @@ if (isset($_POST['edit'])){
     $ad_date = $_POST['ad_date'];
     $story = $_POST['story'];
     $user_email = $_SESSION['email'];
-    echo $user_email;
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
     while ($run_id = mysqli_fetch_assoc($id)){
         $user_id = $run_id['userID'];
@@ -16,7 +15,6 @@ if (isset($_POST['edit'])){
         $l_name = $run_id['lastname'];
         $authorname = $f_name . ' ' . $l_name;
         echo $authorname;
-        echo "step 4";
         if (isset($_FILES['files'])) {
             foreach ($_FILES['files']['tmp_name'] as $key => $tmp_name) {
                 $file_name = $key . $_FILES['files']['name'][$key];
@@ -24,7 +22,6 @@ if (isset($_POST['edit'])){
                 $file_tmp = $_FILES['files']['tmp_name'][$key];
                 $file_type = $_FILES['files']['type'][$key];
                 $desired_dir = "../images/".$title."/";
-                echo $desired_dir . "<br />";
                 if (is_dir($desired_dir) == false) {
                     mkdir("$desired_dir", 0755);
                 }// Create directory if it does not exist
@@ -37,19 +34,13 @@ if (isset($_POST['edit'])){
         }
         $data = "INSERT INTO adventures( story, adventureTitle, adventureCountry, adventureAuthor, date, adventurePhotoName, userID)
         VALUES ('$story', '$title', '$ad_country', '$authorname', '$ad_date', '$desired_dir', '$user_id')";
-       echo "<pre>Debug: $query</pre>\m";
         $run_data = mysqli_query($conn, $data);
-        if ( false===$run_data ) {
-              printf("error: %s\n", mysqli_error($con));
-        }
-        else {
-            echo 'done.';
-        }
-            /*if ( $run_data) {
+      
+            if ( $run_data) {
                 echo "<script>alert('Your adventure was successfully created')</script>";
                 echo "<script>window.open('../profile.php', '_self')</script>";
     
-            }*/
+            }
 
     }
 }
