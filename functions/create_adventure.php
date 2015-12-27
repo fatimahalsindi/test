@@ -34,9 +34,19 @@ if (isset($_POST['edit'])){
                 if ($run_query) {
                     echo "image upload successfuul";
                 }
+                
+            }
+            
+        }
+        $data = "INSERT INTO adventures(adventureTitle, adventureCountry, date, story, adventureAuthor, userID, adventurePhotoName)
+        VALUES ('$title', '$ad_country', '$ad_date', '$story', '$authorname', '$user_id', '$desired_dir' )";
+        $run_data = mysqli_query($conn, $data);
+            if ( $run_data) {
+                echo "<script>alert('Your adventure was successfully created')</script>";
+                echo "<script>window.open('../profile.php', '_self')</script>";
+    
+            }
     }
-}
-}
 }
     
 /*if (isset($_POST['edit'])) {
