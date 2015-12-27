@@ -3,7 +3,7 @@ include ("templates/header.php");
 include ("functions/function.php");
 ?>
 
-            <form method="post" action="login.php " id="login">
+            <form method="post" action="functions/login.php " id="login">
                 Email <input type="email" name="username" placeholder="User name" required="required"/>
                 Password <input type="password" name="password" placeholder="******" />
                 <button name="login">Login</button>
@@ -17,7 +17,7 @@ include ("functions/function.php");
         <ul class="adventures"><?php get_adventure(); ?>
         </ul>
         <div id="register">
-            <form action="register.php " method="post" >
+            <form action="functions/register.php " method="post" >
                         <table class="register_form">
                                     <tr>
                                                 <td>
