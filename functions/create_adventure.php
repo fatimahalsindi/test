@@ -4,6 +4,7 @@ include ("database.php");
 
 
 if (isset($_POST['edit'])) {
+    echo "step one";
     $title = $_POST['title'];
     $ad_country = $_POST['ad_country'];
     $ad_date = $_POST['ad_date'];
