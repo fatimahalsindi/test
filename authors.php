@@ -8,9 +8,6 @@ include ("functions/function.php");
                 Password <input type="password" name="password" placeholder="******" />
                 <button name="login">Login</button>
             </form>
-            <div id="register">
-                <h5><a href="registerform.php"> Click here to register</a></h5>
-            </div>
         </div>
     </div>
 </div>
@@ -18,6 +15,10 @@ include ("functions/function.php");
     <div id="main_content">
     <p><h2>All Authors on this Blog</h2></p>
         <p><?php get_authors(); ?></p>
+        
+            <div id="register">
+                <h5><a href="registerform.php"> Click here to register</a></h5>
+            </div>
                 <p><?php echo search(); ?></p>
 
 </div>
