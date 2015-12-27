@@ -8,7 +8,7 @@ if (isset($_POST['edit'])){
     $ad_date = $_POST['ad_date'];
     $story = $_POST['story'];
     $user_email = $_SESSION['email'];
-    
+    echo $user_email;
     $id = mysqli_query($conn, "SELECT * from users WHERE email='$user_email'");
     while ($run_id = mysqli_fetch_array($id){
         $user_id = $run_id['userID'];
