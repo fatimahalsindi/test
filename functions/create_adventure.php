@@ -44,11 +44,7 @@ if (isset($_POST['edit'])) {
             }
         }
 
-        $query = "INSERT INTO Photos (photoName,adventureID) VALUES ('$desired_dir','$adventureID')";
-        $run_query = mysqli_query($conn, $query);
-    }
-
-    $data = "INSERT INTO Adventures(adventureTitle, adventureCountry, date, story, adventureAuthor, userID, adventurePhotoName)
+    $data = "INSERT INTO adventures(adventureTitle, adventureCountry, date, story, adventureAuthor, userID, adventurePhotoName)
              VALUES ('$title', '$ad_country', '$ad_date', '$story', '$authorname', '$user_id', '$desired_dir' )";
     $run_data = mysqli_query($conn, $data);
         if ( $run_data) {
