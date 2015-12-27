@@ -33,17 +33,17 @@ include ("database.php");
                         echo $email ."<br/>";
                                 echo $country ."<br/>";
                                     echo $role ."<br/>";
-
-
-
-
-        $insert_data = mysqli_query($conn, "insert into users (firstname, lastname, email, country, dofBirth, password, role) 
-        VALUES ('$f_name', '$l_name', '$email', '$country', '$role', '$passw', '$dofb')");
-        if ($insert_data) {
+                                    echo $passw ."<br/>"
+                                    $sql = "insert into users (firstname, lastname, email, country, dofBirth, password, role)
+                                    values ('$f_name', '$l_name', '$email', '$country', '$dofb', '$passw', '$role')";
+                                    if ($sql){
+                                        echo "step one";
+                                    }
+        /*if ($insert_data) {
             //header( "refresh:2;url=../index.php" );
             echo "<script>alert('Your registration was successful')</script>";
             exit();
-        }
+        }*/
     }
     else 
 {
