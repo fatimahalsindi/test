@@ -1,6 +1,7 @@
 <?php
 include ("login.php");
 include ("database.php");
+global $conn;
 if (isset($_POST['edit'])){
     $title = $_POST['title'];
     $ad_country = $_POST['ad_country'];
